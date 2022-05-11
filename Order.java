@@ -37,11 +37,14 @@ public class Order {
 	@OneToMany(mappedBy="ord", fetch= FetchType.LAZY, cascade= CascadeType.ALL)
 	private List<Item> itemList;
 	
-	@OneToMany
-	@JoinColumn(name="itemid")
-	private Item item;
+	public List<Item> getItemList() {
+		return itemList;
+	}
 
-	
+	public void setItemList(List<Item> itemList) {
+		this.itemList = itemList;
+	}
+
 	public Order()
 	{
 		
